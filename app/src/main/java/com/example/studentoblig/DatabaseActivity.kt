@@ -14,6 +14,8 @@ class DatabaseActivity : AppCompatActivity() {
         setContentView(R.layout.activity_database)
 
         val myDataset = Datasource().loadAnimals()
+        val recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
+        recyclerView.adapter = ItemAdapter(this, myDataset)
     }
 
     fun startAdd(view: View) {
