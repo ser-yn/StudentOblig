@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentoblig.R
@@ -13,11 +14,12 @@ import com.example.studentoblig.model.Animal
 class ItemAdapter(
     private val context: Context,
     private val dataset: List<Animal>
-    ): RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(){
+): RecyclerView.Adapter<ItemAdapter.ItemViewHolder>(){
 
     //Since viewHolder is only used inside ItemAdapter, we can make it nested to show that relationship
     class ItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.item_title)
+        val imageView: ImageView = view.findViewById(R.id.item_image)
     }
 
     //Creates new view holder when there are none to reuse, one ViewHolder represents a single list Item
@@ -31,6 +33,7 @@ class ItemAdapter(
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
         holder.textView.text = context.resources.getString(item.stringResourceId)
+        holder.imageView.setImageResource(item.imageResourceId)
     }
 
     override fun getItemCount() = dataset.size
