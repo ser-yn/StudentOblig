@@ -6,11 +6,15 @@ import android.widget.TextView
 
 class QuizActivity : AppCompatActivity() {
 
-    private var rightCounter: Int = 0;
-    private var wrongCounter: Int = 0;
+    private var rightCounter: Int = 0
+    private var wrongCounter: Int = 0
 
-    private lateinit var textViewRight: TextView;
-    private lateinit var textViewWrong: TextView;
+    //I change the Text according to the amount of given answers
+    //Somehow it was not possible to initialize them right away
+    //I didn't want to create the connection to the TextView new everytime i used it
+    //So i used lateinit and initialize it in the oncreate function
+    private lateinit var textViewRight: TextView
+    private lateinit var textViewWrong: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +28,5 @@ class QuizActivity : AppCompatActivity() {
 
 
     fun evaluateAnswer(view: android.view.View) {
-
     }
 }

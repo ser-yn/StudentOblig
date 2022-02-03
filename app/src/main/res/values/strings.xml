@@ -11,4 +11,8 @@
     <string name="animal4">Owl</string>
     <string name="animal5">Whale</string>
     <string name="animal6">Wolf</string>
+
+    <string name="contentDesAddData">Add to Database</string>
+    <string name="contentDesSubData">Delete from Database</string>
+    <string name="contentDesSortData">Sort the Database</string>
 </resources>
