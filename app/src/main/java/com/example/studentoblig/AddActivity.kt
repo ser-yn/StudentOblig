@@ -53,8 +53,10 @@ class AddActivity : AppCompatActivity() {
             Toast.makeText(this, "You need to enter a name", Toast.LENGTH_SHORT).show()
         }
         else{
-            //GlobalListHolder.animalList.add(Animal(R.id.editTextPersonName, R.drawable.owl))
+            //GlobalListHolder.animalList.add(Animal(R.string.animal4, R.drawable.owl))
             Toast.makeText(this, "Cool name", Toast.LENGTH_SHORT).show()
+            textView.text=""
+            butAddToData.isEnabled=false
         }
     }
 }
