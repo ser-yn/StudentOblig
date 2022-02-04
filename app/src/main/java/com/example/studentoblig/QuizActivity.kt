@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.example.studentoblig.data.GlobalListHolder
 
 class QuizActivity : AppCompatActivity() {
@@ -30,7 +31,7 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var butAnsThree: Button
     private lateinit var butCheck: Button
 
-
+    //Find all the Buttons and Views on Creation
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz)
@@ -107,25 +108,28 @@ class QuizActivity : AppCompatActivity() {
         }
     }
 
+    //The button to check the answers gets enabled after pressing one of the answer buttons
     fun pressedAnswerButton(view: View){
         pressedButtonId = view.id
         butCheck.isEnabled = true
     }
 
+    //The check button gets disabled for the next Round
+    //I stored the id of the right button in the setPictures method
+    //I compare it to the pressed Button, and create a toast, then i call the setPicture method again
     fun evaluateAnswer(view: View) {
         butCheck.isEnabled = false
         if(pressedButtonId==rightButtonId){
             rightCounter++
             textViewRight.text = "Right answers: " + rightCounter.toString()
+            Toast.makeText(this, "Great, you're right", Toast.LENGTH_SHORT).show()
         }
         else {
+            var butTempRight: Button = findViewById(rightButtonId)
             wrongCounter++
             textViewWrong.text = "Right answers: " + wrongCounter.toString()
+            Toast.makeText(this, "Correct Answer is: " + butTempRight.text, Toast.LENGTH_SHORT).show()
         }
-
-        //butAnsOne.setBackgroundColor(butAnsOne.context.resources.getColor(R.color.red))
-        //butAnsTwo.setBackgroundColor(butAnsOne.context.resources.getColor(R.color.light_Green))
-        //butAnsThree.setBackgroundColor(butAnsOne.context.resources.getColor(R.color.red))
 
         setPictureAndAnswersRandom()
     }
