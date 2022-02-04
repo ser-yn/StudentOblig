@@ -20,12 +20,12 @@ class GlobalListHolder : Application() {
 
     private fun createAnimalList(): MutableList<Animal> {
         return mutableListOf<Animal>(
+            Animal(R.string.animal4, R.drawable.owl),
+            Animal(R.string.animal5, R.drawable.whale),
+            Animal(R.string.animal6, R.drawable.wolf),
             Animal(R.string.animal1, R.drawable.bug),
             Animal(R.string.animal2, R.drawable.cow),
             Animal(R.string.animal3, R.drawable.lion),
-            Animal(R.string.animal4, R.drawable.owl),
-            Animal(R.string.animal5, R.drawable.whale),
-            Animal(R.string.animal6, R.drawable.wolf)
         )
     }
 }
