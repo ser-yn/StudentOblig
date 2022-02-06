@@ -32,8 +32,8 @@ class ItemAdapter(
     //Replaces the content of a listItem view
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
-        holder.textView.text = context.resources.getString(item.stringResourceId)
-        holder.imageView.setImageResource(item.imageResourceId)
+        holder.textView.text = item.stringResource
+        holder.imageView.setImageDrawable(item.imageResource)
     }
 
     override fun getItemCount() = dataset.size

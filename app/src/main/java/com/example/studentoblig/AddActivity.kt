@@ -53,8 +53,9 @@ class AddActivity : AppCompatActivity() {
             Toast.makeText(this, "You need to enter a name", Toast.LENGTH_SHORT).show()
         }
         else{
-            //GlobalListHolder.animalList.add(Animal(R.string.animal4, R.drawable.owl))
+            GlobalListHolder.animalList.add(Animal(textView.text.toString(), imageView.drawable))
             Toast.makeText(this, "Cool name", Toast.LENGTH_SHORT).show()
+            imageView.setImageResource(android.R.color.transparent)
             textView.text=""
             butAddToData.isEnabled=false
         }

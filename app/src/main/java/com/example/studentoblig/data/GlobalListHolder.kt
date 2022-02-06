@@ -1,6 +1,7 @@
 package com.example.studentoblig.data
 
 import android.app.Application
+import androidx.core.graphics.drawable.toDrawable
 import com.example.studentoblig.R
 import com.example.studentoblig.model.Animal
 
@@ -20,12 +21,12 @@ class GlobalListHolder : Application() {
 
     private fun createAnimalList(): MutableList<Animal> {
         return mutableListOf<Animal>(
-            Animal(R.string.animal4, R.drawable.owl),
-            Animal(R.string.animal5, R.drawable.whale),
-            Animal(R.string.animal6, R.drawable.wolf),
-            Animal(R.string.animal1, R.drawable.bug),
-            Animal(R.string.animal2, R.drawable.cow),
-            Animal(R.string.animal3, R.drawable.lion),
+            Animal("Owl", getDrawable(R.drawable.owl)),
+            Animal("Whale", getDrawable(R.drawable.whale)),
+            Animal("Wolf", getDrawable(R.drawable.wolf)),
+            Animal("Bug", getDrawable(R.drawable.bug)),
+            Animal("Cow", getDrawable(R.drawable.cow)),
+            Animal("Lion", getDrawable(R.drawable.lion)),
         )
     }
 }

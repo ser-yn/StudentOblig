@@ -7,7 +7,7 @@
     tools:context=".DatabaseActivity">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButtonRight"
+        android:id="@+id/floatingActionButtonAdd"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginEnd="16dp"
@@ -21,7 +21,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButtonMiddle"
+        android:id="@+id/floatingActionButtonSort"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
@@ -29,22 +29,22 @@
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:contentDescription="@string/contentDesSortData"
-        android:onClick="startAdd"
+        android:onClick="sortData"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/floatingActionButtonRight"
-        app:layout_constraintStart_toEndOf="@+id/floatingActionButtonLeft"
+        app:layout_constraintEnd_toStartOf="@+id/floatingActionButtonAdd"
+        app:layout_constraintStart_toEndOf="@+id/floatingActionButtonDelete"
         app:srcCompat="@android:drawable/ic_menu_sort_alphabetically"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButtonLeft"
+        android:id="@+id/floatingActionButtonDelete"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:clickable="true"
         android:contentDescription="@string/contentDesSubData"
-        android:onClick="startAdd"
+        android:onClick="DeleteEntry"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_menu_delete"

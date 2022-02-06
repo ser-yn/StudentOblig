@@ -78,30 +78,30 @@ class QuizActivity : AppCompatActivity() {
             }
         }
 
-        imgView.setImageResource(GlobalListHolder.animalList[rightAnswer].imageResourceId)
+        imgView.setImageDrawable(GlobalListHolder.animalList[rightAnswer].imageResource)
 
         //Create random Number with a range of three to randomly select which button is
         //going to hold the right Answer
         var randButton: Int = (0 until 3).random()
         when(randButton){
             0 -> {
-                butAnsOne.setText(GlobalListHolder.animalList[rightAnswer].stringResourceId)
-                butAnsTwo.setText(GlobalListHolder.animalList[wrongAnswerOne].stringResourceId)
-                butAnsThree.setText(GlobalListHolder.animalList[wrongAnswerTwo].stringResourceId)
+                butAnsOne.text = GlobalListHolder.animalList[rightAnswer].stringResource
+                butAnsTwo.text = GlobalListHolder.animalList[wrongAnswerOne].stringResource
+                butAnsThree.text = GlobalListHolder.animalList[wrongAnswerTwo].stringResource
 
                 rightButtonId = R.id.buttonAnswerOne
                 }
             1 -> {
-                butAnsOne.setText(GlobalListHolder.animalList[wrongAnswerOne].stringResourceId)
-                butAnsTwo.setText(GlobalListHolder.animalList[rightAnswer].stringResourceId)
-                butAnsThree.setText(GlobalListHolder.animalList[wrongAnswerTwo].stringResourceId)
+                butAnsOne.text = GlobalListHolder.animalList[wrongAnswerOne].stringResource
+                butAnsTwo.text = GlobalListHolder.animalList[rightAnswer].stringResource
+                butAnsThree.text = GlobalListHolder.animalList[wrongAnswerTwo].stringResource
 
                 rightButtonId = R.id.buttonAnswerTwo
             }
             2 -> {
-                butAnsOne.setText(GlobalListHolder.animalList[wrongAnswerTwo].stringResourceId)
-                butAnsTwo.setText(GlobalListHolder.animalList[wrongAnswerOne].stringResourceId)
-                butAnsThree.setText(GlobalListHolder.animalList[rightAnswer].stringResourceId)
+                butAnsOne.text = GlobalListHolder.animalList[wrongAnswerTwo].stringResource
+                butAnsTwo.text = GlobalListHolder.animalList[wrongAnswerOne].stringResource
+                butAnsThree.text = GlobalListHolder.animalList[rightAnswer].stringResource
 
                 rightButtonId = R.id.buttonAnswerThree
             }
