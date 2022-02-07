@@ -30,6 +30,7 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var butAnsTwo: Button
     private lateinit var butAnsThree: Button
     private lateinit var butCheck: Button
+    private lateinit var butPress: Button
 
     //Find all the Buttons and Views on Creation
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -111,6 +112,13 @@ class QuizActivity : AppCompatActivity() {
     //The button to check the answers gets enabled after pressing one of the answer buttons
     fun pressedAnswerButton(view: View){
         pressedButtonId = view.id
+
+        butAnsOne.setBackgroundColor(resources.getColor(R.color.dark_Green))
+        butAnsTwo.setBackgroundColor(resources.getColor(R.color.dark_Green))
+        butAnsThree.setBackgroundColor(resources.getColor(R.color.dark_Green))
+
+        butPress = findViewById(pressedButtonId)
+        butPress.setBackgroundColor(resources.getColor(R.color.light_Green))
         butCheck.isEnabled = true
     }
 
@@ -119,6 +127,7 @@ class QuizActivity : AppCompatActivity() {
     //I compare it to the pressed Button, and create a toast, then i call the setPicture method again
     fun evaluateAnswer(view: View) {
         butCheck.isEnabled = false
+        butPress.setBackgroundColor(resources.getColor(R.color.dark_Green))
         if(pressedButtonId==rightButtonId){
             rightCounter++
             textViewRight.text = "Right answers: " + rightCounter.toString()
