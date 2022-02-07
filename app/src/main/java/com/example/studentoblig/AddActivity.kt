@@ -54,7 +54,7 @@ class AddActivity : AppCompatActivity() {
         }
         else{
             GlobalListHolder.animalList.add(Animal(textView.text.toString(), imageView.drawable))
-            Toast.makeText(this, "Cool name", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, textView.text.toString() + " has been added to Database", Toast.LENGTH_SHORT).show()
             imageView.setImageResource(android.R.color.transparent)
             textView.text=""
             butAddToData.isEnabled=false

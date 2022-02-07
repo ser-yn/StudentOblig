@@ -4,14 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentoblig.adapter.ItemAdapter
 import com.example.studentoblig.data.GlobalListHolder
 import com.example.studentoblig.model.Animal
 
 class DatabaseActivity : AppCompatActivity() {
-    private var sortAlphabetical: Boolean = true
+    private var sortAlphabetical: Boolean = false
 
     private lateinit var myDataset: MutableList<Animal>
     private lateinit var recyclerView: RecyclerView
@@ -20,9 +19,16 @@ class DatabaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_database)
 
-        myDataset = GlobalListHolder.animalList
+        GlobalListHolder.animalList.sortWith(compareBy { it.stringResource })
         recyclerView = findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.adapter = ItemAdapter(this, myDataset)
+        recyclerView.adapter = ItemAdapter(this, GlobalListHolder.animalList)
+    }
+
+    override fun onResume() {
+        super.onResume()
+        GlobalListHolder.animalList.sortWith(compareBy { it.stringResource })
+        sortAlphabetical = false
+        recyclerView.adapter?.notifyDataSetChanged()
     }
 
     fun startAdd(view: View) {
@@ -31,7 +37,8 @@ class DatabaseActivity : AppCompatActivity() {
     }
 
     fun DeleteEntry(view: View){
-        Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show()
+        val intent = Intent(this, RemoveActivity::class.java)
+        startActivity(intent)
     }
 
     //Sorts the names out of the StringResource, boolean which switches everytime

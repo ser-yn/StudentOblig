@@ -11,9 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MainTheme">
         <activity
+            android:name=".RemoveActivity"
+            android:exported="false"
+            android:parentActivityName=".DatabaseActivity" />
+        <activity
             android:name=".AddActivity"
             android:exported="false"
-            android:parentActivityName=".DatabaseActivity"/>
+            android:parentActivityName=".DatabaseActivity" />
         <activity
             android:name=".DatabaseActivity"
             android:exported="false"
