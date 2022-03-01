@@ -136,7 +136,7 @@ class QuizActivity : AppCompatActivity() {
         else {
             var butTempRight: Button = findViewById(rightButtonId)
             wrongCounter++
-            textViewWrong.text = "Right answers: " + wrongCounter.toString()
+            textViewWrong.text = "Wrong answers: " + wrongCounter.toString()
             Toast.makeText(this, "Correct Answer is: " + butTempRight.text, Toast.LENGTH_SHORT).show()
         }
 
